@@ -1,0 +1,454 @@
+/* =========================================================
+   PAYSTORE NAVBAR
+========================================================= */
+
+.store-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* =========================================================
+   NAV CONTAINER
+========================================================= */
+
+.nav-container {
+  width: 100%;
+  max-width: 1240px;
+
+  height: 76px;
+
+  margin: 0 auto;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #0f172a;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  letter-spacing: -0.6px;
+}
+
+.brand-icon {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #2563eb;
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-links a {
+  position: relative;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Products / Security hover */
+
+.nav-links a:not(.orders-link)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: #2563eb;
+
+  border-radius: 999px;
+
+  transition: width 0.2s ease;
+}
+
+.nav-links a:not(.orders-link):hover {
+  color: #2563eb;
+}
+
+.nav-links a:not(.orders-link):hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   ORDERS
+========================================================= */
+
+.orders-link {
+  padding: 10px 17px;
+
+  color: #2563eb !important;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 9px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.orders-link:hover,
+.orders-link.active {
+  color: white !important;
+
+  background: #2563eb;
+
+  border-color: #2563eb;
+}
+
+.orders-link:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-button {
+  width: 42px;
+  height: 42px;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.mobile-menu-button:focus-visible {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Hamburger lines */
+
+.mobile-menu-button span {
+  width: 18px;
+  height: 2px;
+
+  display: block;
+
+  background: #334155;
+
+  border-radius: 999px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+/* =========================================================
+   HAMBURGER → X
+========================================================= */
+
+.mobile-menu-button.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-button.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   MOBILE MENU WRAPPER
+========================================================= */
+
+.mobile-menu-wrapper {
+  display: none;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .nav-container {
+    height: 68px;
+
+    padding: 0 18px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .brand-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  /* Hide desktop nav */
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  /* Mobile menu */
+
+  .mobile-menu-wrapper {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: block;
+
+    padding: 0 18px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .mobile-menu-wrapper.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+  }
+
+  /* Actual menu */
+
+  .mobile-nav {
+    max-width: 1240px;
+
+    margin: 0 auto;
+
+    padding: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    box-shadow:
+      0 18px 45px rgba(15, 23, 42, 0.12),
+      0 5px 15px rgba(15, 23, 42, 0.05);
+  }
+
+  /* Mobile links */
+
+  .mobile-nav a {
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    color: #475569;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .mobile-nav a:hover {
+    color: #2563eb;
+
+    background: #eff6ff;
+  }
+
+  /* Arrow */
+
+  .mobile-nav-arrow {
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .mobile-nav a:hover .mobile-nav-arrow {
+    color: #2563eb;
+
+    transform: translateX(3px);
+  }
+
+  /* =====================================================
+     MOBILE ORDERS
+  ===================================================== */
+
+  .mobile-orders-link {
+    margin-top: 4px;
+
+    color: #2563eb !important;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+  }
+
+  .mobile-orders-link:hover {
+    color: #2563eb !important;
+
+    background: #dbeafe !important;
+  }
+
+  .mobile-orders-link.active {
+    color: white !important;
+
+    background: #2563eb;
+
+    border-color: #2563eb;
+  }
+
+  .mobile-orders-link.active .mobile-nav-arrow {
+    color: white;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .nav-container {
+    padding: 0 14px;
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-menu-wrapper {
+    padding: 0 14px;
+  }
+
+  .mobile-nav {
+    padding: 8px;
+  }
+}   

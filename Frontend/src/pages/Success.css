@@ -1,0 +1,129 @@
+.success-page-container {
+  min-height: 100vh;
+  background-color: #0b0f19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  position: relative;
+}
+
+.success-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  text-align: center;
+  border: 1px solid #f3f4f6;
+}
+
+.success-icon-box {
+  width: 64px;
+  height: 64px;
+  background-color: #ecfdf5;
+  color: #059669;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+  border: 1px solid #d1fae5;
+}
+
+.success-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.success-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.order-details-box {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 32px;
+  border: 1px solid #f3f4f6;
+}
+
+.order-details-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.status-badge {
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  background-color: #d1fae5;
+  color: #047857;
+  text-transform: capitalize;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.continue-btn {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+  font-size: 16px;
+}
+
+.continue-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.loading-container {
+  min-height: 100vh;
+  background-color: #0b0f19;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
