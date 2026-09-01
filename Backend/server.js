@@ -21,6 +21,10 @@ app.use(
   stripeWebhook,
 );
 
+app.get('/', (req, res) => {
+  res.send("Stripe Backend is running successfully! 🚀");
+});
+
 app.use(express.json());
 
 app.use("/api/payments", paymentRoutes);
