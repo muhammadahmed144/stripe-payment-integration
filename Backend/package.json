@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node api/server.js",
-    "start:dev": "node --watch api/server.js"
+    "start": "node server.js",
+    "start:dev": "node --watch server.js"
   },
   "keywords": [],
   "author": "",

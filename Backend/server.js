@@ -1,12 +1,12 @@
 import express from "express";
 import cors from "cors";
-import connectDB from "./config/dibi.js";
+import connectDB from "./api/config/dibi.js";
 import dns from "dns";
 import dotenv from "dotenv";
-import paymentRoutes from "./routes/paymentRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
-import stripeWebhook from "./routes/stripeWebhookRoutes.js";
+import paymentRoutes from "./api/routes/paymentRoutes.js";
+import productRoutes from "./api/routes/productRoutes.js";
+import orderRoutes from "./api/routes/orderRoutes.js";
+import stripeWebhook from "./api/routes/stripeWebhookRoutes.js";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 dotenv.config();
