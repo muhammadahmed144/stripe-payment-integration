@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 import paymentRoutes from "./routes/paymentRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
-import { stripeWebhookHandler } from "./controllers/stripeWebhookHandler.js";
+import stripeWebhook from "./routes/stripeWebhookRoutes.js";
+
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 dotenv.config();
 
@@ -14,10 +15,10 @@ const app = express();
 
 app.use(cors());
 
-app.post(
+app.use(
   "/api/stripe/webhook",
-  express.raw({type: "application/json"}),
-  stripeWebhookHandler
+  express.raw({ type: "application/json" }),
+  stripeWebhook,
 );
 
 app.use(express.json());

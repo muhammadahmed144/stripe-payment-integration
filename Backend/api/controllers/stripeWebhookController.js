@@ -4,7 +4,7 @@ import webhookEventModel from "../models/webhookEvent.js";
 import { sendOrderConfirmationEmail } from "../utils/sendEmail.js";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export const stripeWebhookHandler = async (req, res) => {
+export const stripeWebhook = async (req, res) => {
   console.log("Is req.body a Buffer?", Buffer.isBuffer(req.body));
   console.log("Req.body type:", typeof req.body);
   const sig = req.headers["stripe-signature"];

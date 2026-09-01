@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "node --watch server.js"
+    "start": "node api/server.js",
+    "start:dev": "node --watch api/server.js"
   },
   "keywords": [],
   "author": "",
