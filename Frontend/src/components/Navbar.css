@@ -17,7 +17,6 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
-
 /* =========================================================
    NAV CONTAINER
 ========================================================= */
@@ -39,7 +38,6 @@
 
   justify-content: space-between;
 }
-
 
 /* =========================================================
    BRAND
@@ -63,7 +61,6 @@
   text-decoration: none;
 }
 
-
 /* Brand icon */
 
 .brand-icon {
@@ -86,13 +83,11 @@
   flex-shrink: 0;
 }
 
-
 .brand-icon svg {
   width: 23px;
 
   height: 23px;
 }
-
 
 /* =========================================================
    DESKTOP NAVIGATION
@@ -112,7 +107,6 @@
   font-weight: 600;
 }
 
-
 .nav-links a {
   position: relative;
 
@@ -124,7 +118,6 @@
     color 0.2s ease,
     background 0.2s ease;
 }
-
 
 /* =========================================================
    PRODUCTS / SECURITY UNDERLINE
@@ -150,16 +143,13 @@
   transition: width 0.2s ease;
 }
 
-
 .nav-links a:not(.orders-link):hover {
   color: #2563eb;
 }
 
-
 .nav-links a:not(.orders-link):hover::after {
   width: 100%;
 }
-
 
 /* =========================================================
    ORDERS DESKTOP
@@ -183,7 +173,6 @@
     transform 0.2s ease;
 }
 
-
 .orders-link:hover,
 .orders-link.active {
   color: #ffffff !important;
@@ -193,11 +182,9 @@
   border-color: #2563eb;
 }
 
-
 .orders-link:hover {
   transform: translateY(-1px);
 }
-
 
 /* =========================================================
    MOBILE MENU BUTTON
@@ -237,7 +224,6 @@
     visibility 0.2s ease;
 }
 
-
 /* Hamburger hover */
 
 .mobile-menu-button:hover {
@@ -245,12 +231,10 @@
 
   border-color: #dbeafe;
 
-  box-shadow:
-    0 0 0 4px rgba(37, 99, 235, 0.10);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 
   transform: translateY(-1px);
 }
-
 
 /* Hamburger focus */
 
@@ -259,10 +243,8 @@
 
   border-color: #2563eb;
 
-  box-shadow:
-    0 0 0 4px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
-
 
 /* =========================================================
    HAMBURGER LINES
@@ -280,7 +262,6 @@
   border-radius: 999px;
 }
 
-
 /* =========================================================
    OPEN STATE
    IMPORTANT:
@@ -297,7 +278,6 @@
   transform: scale(0.9);
 }
 
-
 /* =========================================================
    MOBILE MENU WRAPPER
 ========================================================= */
@@ -306,13 +286,11 @@
   display: none;
 }
 
-
 /* =========================================================
    MOBILE SIDEBAR
 ========================================================= */
 
 @media (max-width: 700px) {
-
   /* =======================================================
      NAVBAR
   ======================================================= */
@@ -323,18 +301,15 @@
     padding: 0 18px;
   }
 
-
   .brand {
     font-size: 19px;
   }
-
 
   .brand-icon {
     width: 37px;
 
     height: 37px;
   }
-
 
   /* =======================================================
      HIDE DESKTOP NAV
@@ -343,7 +318,6 @@
   .nav-links {
     display: none;
   }
-
 
   /* =======================================================
      SHOW HAMBURGER
@@ -356,7 +330,6 @@
 
     z-index: 2100;
   }
-
 
   /* =======================================================
      SIDEBAR WRAPPER
@@ -380,7 +353,6 @@
     z-index: 2000;
   }
 
-
   /* =======================================================
      DARK OVERLAY
   ======================================================= */
@@ -400,7 +372,6 @@
 
     transition: opacity 0.3s ease;
   }
-
 
   /* =======================================================
      SIDEBAR
@@ -431,19 +402,16 @@
 
     border-radius: 0 22px 22px 0;
 
-    box-shadow:
-      12px 0 40px rgba(15, 23, 42, 0.16);
+    box-shadow: 12px 0 40px rgba(15, 23, 42, 0.16);
 
     transform: translateX(-105%);
 
-    transition:
-      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
     overflow-y: auto;
 
     box-sizing: border-box;
   }
-
 
   /* =======================================================
      SIDEBAR OPEN
@@ -455,18 +423,13 @@
     pointer-events: auto;
   }
 
-
-  .mobile-menu-wrapper.show
-  .mobile-menu-overlay {
+  .mobile-menu-wrapper.show .mobile-menu-overlay {
     opacity: 1;
   }
 
-
-  .mobile-menu-wrapper.show
-  .mobile-nav {
+  .mobile-menu-wrapper.show .mobile-nav {
     transform: translateX(0);
   }
-
 
   /* =======================================================
      SIDEBAR HEADER
@@ -488,7 +451,6 @@
     border-bottom: 1px solid #e5e7eb;
   }
 
-
   /* =======================================================
      SIDEBAR BRAND
   ======================================================= */
@@ -508,7 +470,6 @@
 
     letter-spacing: -0.5px;
   }
-
 
   /* =======================================================
      SIDEBAR ICON
@@ -532,13 +493,11 @@
     border-radius: 10px;
   }
 
-
   .mobile-sidebar-icon svg {
     width: 22px;
 
     height: 22px;
   }
-
 
   /* =======================================================
      SIDEBAR CLOSE BUTTON
@@ -575,7 +534,6 @@
       transform 0.2s ease;
   }
 
-
   /* Close button hover */
 
   .mobile-sidebar-close:hover {
@@ -585,12 +543,10 @@
 
     /* Professional 4px outer ring */
 
-    box-shadow:
-      0 0 0 4px rgba(37, 99, 235, 0.10);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 
     transform: scale(1.03);
   }
-
 
   /* Close button focus */
 
@@ -599,10 +555,8 @@
 
     border-color: #2563eb;
 
-    box-shadow:
-      0 0 0 4px rgba(37, 99, 235, 0.12);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
   }
-
 
   /* =======================================================
      CLOSE ICON
@@ -622,23 +576,19 @@
     transition: background 0.2s ease;
   }
 
-
   .mobile-sidebar-close span:first-child {
     transform: rotate(45deg);
   }
 
-
   .mobile-sidebar-close span:last-child {
     transform: rotate(-45deg);
   }
-
 
   /* Close icon hover */
 
   .mobile-sidebar-close:hover span {
     background: #2563eb;
   }
-
 
   /* =======================================================
      MOBILE NAV LINKS WRAPPER
@@ -651,7 +601,6 @@
 
     gap: 7px;
   }
-
 
   /* =======================================================
      MOBILE LINKS
@@ -689,7 +638,6 @@
       transform 0.2s ease;
   }
 
-
   /* Link hover */
 
   .mobile-nav a:hover {
@@ -701,7 +649,6 @@
 
     transform: translateX(3px);
   }
-
 
   /* =======================================================
      ARROWS
@@ -717,14 +664,11 @@
       transform 0.2s ease;
   }
 
-
-  .mobile-nav a:hover
-  .mobile-nav-arrow {
+  .mobile-nav a:hover .mobile-nav-arrow {
     color: #2563eb;
 
     transform: translateX(4px);
   }
-
 
   /* =======================================================
      ORDERS
@@ -740,7 +684,6 @@
     border: 1px solid #dbeafe !important;
   }
 
-
   .mobile-orders-link:hover {
     color: #2563eb !important;
 
@@ -749,7 +692,6 @@
     transform: translateX(3px);
   }
 
-
   .mobile-orders-link.active {
     color: #ffffff !important;
 
@@ -757,16 +699,12 @@
 
     border-color: #2563eb !important;
 
-    box-shadow:
-      0 7px 18px rgba(37, 99, 235, 0.22);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.22);
   }
 
-
-  .mobile-orders-link.active
-  .mobile-nav-arrow {
+  .mobile-orders-link.active .mobile-nav-arrow {
     color: #ffffff;
   }
-
 
   /* =======================================================
      SIDEBAR FOOTER
@@ -792,7 +730,6 @@
     border-top: 1px solid #f1f5f9;
   }
 
-
   /* Green security indicator */
 
   .security-dot {
@@ -804,27 +741,22 @@
 
     background: #22c55e;
 
-    box-shadow:
-      0 0 0 4px rgba(34, 197, 94, 0.10);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
   }
 }
-
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
-
   .nav-container {
     padding: 0 14px;
   }
 
-
   .brand {
     font-size: 18px;
   }
-
 
   .brand-icon {
     width: 35px;
@@ -832,13 +764,11 @@
     height: 35px;
   }
 
-
   .mobile-menu-button {
     width: 40px;
 
     height: 40px;
   }
-
 
   .mobile-nav {
     width: 275px;
@@ -848,25 +778,21 @@
     padding: 18px 14px;
   }
 
-
   .mobile-sidebar-header {
     padding-bottom: 14px;
 
     margin-bottom: 14px;
   }
 
-
   .mobile-sidebar-brand {
     font-size: 19px;
   }
-
 
   .mobile-sidebar-icon {
     width: 36px;
 
     height: 36px;
   }
-
 
   .mobile-sidebar-close {
     width: 38px;
