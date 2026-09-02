@@ -5,11 +5,18 @@ import "./Navbar.css";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // =========================================================
+  // CLOSE MENU
+  // =========================================================
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  // Close mobile menu with Escape
+  // =========================================================
+  // ESCAPE KEY
+  // =========================================================
+
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -24,7 +31,10 @@ export default function Navbar() {
     };
   }, []);
 
-  // Close menu when resizing to desktop
+  // =========================================================
+  // CLOSE WHEN RESIZE TO DESKTOP
+  // =========================================================
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 700) {
@@ -39,7 +49,10 @@ export default function Navbar() {
     };
   }, []);
 
-  // Prevent body scroll when sidebar is open
+  // =========================================================
+  // PREVENT BODY SCROLL WHEN SIDEBAR IS OPEN
+  // =========================================================
+
   useEffect(() => {
     if (menuOpen && window.innerWidth <= 700) {
       document.body.style.overflow = "hidden";
@@ -56,12 +69,14 @@ export default function Navbar() {
     <header className="store-navbar">
 
       {/* =====================================================
-          NAVBAR
+          NAVBAR CONTAINER
       ===================================================== */}
 
       <div className="nav-container">
 
-        {/* BRAND */}
+        {/* ===================================================
+            BRAND
+        =================================================== */}
 
         <Link
           to="/"
@@ -69,6 +84,7 @@ export default function Navbar() {
           onClick={closeMenu}
         >
           <div className="brand-icon">
+
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -98,20 +114,22 @@ export default function Navbar() {
                 strokeLinecap="round"
               />
             </svg>
+
           </div>
 
           <span>PayStore</span>
         </Link>
 
 
-        {/* =====================================================
-            DESKTOP NAV
-        ===================================================== */}
+        {/* ===================================================
+            DESKTOP NAVIGATION
+        =================================================== */}
 
         <nav
           className="nav-links"
           aria-label="Main navigation"
         >
+
           <a href="/#products">
             Products
           </a>
@@ -130,12 +148,13 @@ export default function Navbar() {
           >
             Orders
           </NavLink>
+
         </nav>
 
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-        ===================================================== */}
+        {/* ===================================================
+            MOBILE HAMBURGER
+        =================================================== */}
 
         <button
           type="button"
@@ -143,11 +162,7 @@ export default function Navbar() {
             menuOpen ? "open" : ""
           }`}
           onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label={
-            menuOpen
-              ? "Close navigation menu"
-              : "Open navigation menu"
-          }
+          aria-label="Open navigation menu"
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
         >
@@ -160,7 +175,7 @@ export default function Navbar() {
 
 
       {/* =====================================================
-          MOBILE SIDEBAR
+          MOBILE SIDEBAR WRAPPER
       ===================================================== */}
 
       <div
@@ -169,7 +184,9 @@ export default function Navbar() {
         }`}
       >
 
-        {/* OVERLAY */}
+        {/* ===================================================
+            DARK OVERLAY
+        =================================================== */}
 
         <div
           className="mobile-menu-overlay"
@@ -178,7 +195,9 @@ export default function Navbar() {
         />
 
 
-        {/* SIDEBAR */}
+        {/* ===================================================
+            SIDEBAR
+        =================================================== */}
 
         <nav
           id="mobile-navigation"
@@ -186,13 +205,18 @@ export default function Navbar() {
           aria-label="Mobile navigation"
         >
 
-          {/* SIDEBAR HEADER */}
+          {/* =================================================
+              SIDEBAR HEADER
+          ================================================= */}
 
           <div className="mobile-sidebar-header">
+
+            {/* SIDEBAR BRAND */}
 
             <div className="mobile-sidebar-brand">
 
               <div className="mobile-sidebar-icon">
+
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -222,6 +246,7 @@ export default function Navbar() {
                     strokeLinecap="round"
                   />
                 </svg>
+
               </div>
 
               <span>PayStore</span>
@@ -229,7 +254,9 @@ export default function Navbar() {
             </div>
 
 
-            {/* CLOSE BUTTON */}
+            {/* =================================================
+                SIDEBAR CLOSE BUTTON
+            ================================================= */}
 
             <button
               type="button"
@@ -244,9 +271,13 @@ export default function Navbar() {
           </div>
 
 
-          {/* SIDEBAR LINKS */}
+          {/* =================================================
+              SIDEBAR LINKS
+          ================================================= */}
 
           <div className="mobile-nav-links">
+
+            {/* PRODUCTS */}
 
             <a
               href="/#products"
@@ -260,6 +291,8 @@ export default function Navbar() {
             </a>
 
 
+            {/* SECURITY */}
+
             <a
               href="/#security"
               onClick={closeMenu}
@@ -271,6 +304,8 @@ export default function Navbar() {
               </span>
             </a>
 
+
+            {/* ORDERS */}
 
             <NavLink
               to="/orders"
@@ -291,12 +326,18 @@ export default function Navbar() {
           </div>
 
 
-          {/* SIDEBAR FOOTER */}
+          {/* =================================================
+              SIDEBAR FOOTER
+          ================================================= */}
 
           <div className="mobile-sidebar-footer">
-            <span>Secure payments</span>
+
+            <span>
+              Secure payments
+            </span>
 
             <span className="security-dot" />
+
           </div>
 
         </nav>

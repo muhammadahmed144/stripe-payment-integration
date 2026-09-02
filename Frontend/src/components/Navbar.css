@@ -4,7 +4,9 @@
 
 .store-navbar {
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
 
   background: rgba(255, 255, 255, 0.92);
@@ -22,15 +24,19 @@
 
 .nav-container {
   width: 100%;
+
   max-width: 1240px;
 
   height: 76px;
 
   margin: 0 auto;
+
   padding: 0 28px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
@@ -41,12 +47,15 @@
 
 .brand {
   display: flex;
+
   align-items: center;
+
   gap: 11px;
 
   color: #0f172a;
 
   font-size: 21px;
+
   font-weight: 800;
 
   letter-spacing: -0.6px;
@@ -54,16 +63,22 @@
   text-decoration: none;
 }
 
+
+/* Brand icon */
+
 .brand-icon {
   width: 39px;
+
   height: 39px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 11px;
 
   color: #2563eb;
+
   background: #eff6ff;
 
   border: 1px solid #dbeafe;
@@ -71,26 +86,32 @@
   flex-shrink: 0;
 }
 
+
 .brand-icon svg {
   width: 23px;
+
   height: 23px;
 }
 
 
 /* =========================================================
-   DESKTOP NAV
+   DESKTOP NAVIGATION
 ========================================================= */
 
 .nav-links {
   display: flex;
+
   align-items: center;
+
   gap: 34px;
 
   color: #64748b;
 
   font-size: 14px;
+
   font-weight: 600;
 }
+
 
 .nav-links a {
   position: relative;
@@ -105,7 +126,9 @@
 }
 
 
-/* Products / Security */
+/* =========================================================
+   PRODUCTS / SECURITY UNDERLINE
+========================================================= */
 
 .nav-links a:not(.orders-link)::after {
   content: "";
@@ -113,9 +136,11 @@
   position: absolute;
 
   left: 0;
+
   bottom: -7px;
 
   width: 0;
+
   height: 2px;
 
   background: #2563eb;
@@ -125,9 +150,11 @@
   transition: width 0.2s ease;
 }
 
+
 .nav-links a:not(.orders-link):hover {
   color: #2563eb;
 }
+
 
 .nav-links a:not(.orders-link):hover::after {
   width: 100%;
@@ -135,7 +162,7 @@
 
 
 /* =========================================================
-   ORDERS
+   ORDERS DESKTOP
 ========================================================= */
 
 .orders-link {
@@ -156,14 +183,16 @@
     transform 0.2s ease;
 }
 
+
 .orders-link:hover,
 .orders-link.active {
-  color: white !important;
+  color: #ffffff !important;
 
   background: #2563eb;
 
   border-color: #2563eb;
 }
+
 
 .orders-link:hover {
   transform: translateY(-1px);
@@ -175,12 +204,14 @@
 ========================================================= */
 
 .mobile-menu-button {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+
+  height: 40px;
 
   display: none;
 
   align-items: center;
+
   justify-content: center;
 
   flex-direction: column;
@@ -191,7 +222,7 @@
 
   background: #ffffff;
 
-  border: 1px solid #dbe3ed;
+  border: 1px solid transparent;
 
   border-radius: 10px;
 
@@ -200,14 +231,28 @@
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
+
+
+/* Hamburger hover */
 
 .mobile-menu-button:hover {
-  background: #f8fafc;
+  background: #eff6ff;
 
-  border-color: #cbd5e1;
+  border-color: #dbeafe;
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.10);
+
+  transform: translateY(-1px);
 }
+
+
+/* Hamburger focus */
 
 .mobile-menu-button:focus-visible {
   outline: none;
@@ -215,14 +260,17 @@
   border-color: #2563eb;
 
   box-shadow:
-    0 0 0 3px rgba(37, 99, 235, 0.12);
+    0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 
-/* Hamburger lines */
+/* =========================================================
+   HAMBURGER LINES
+========================================================= */
 
 .mobile-menu-button span {
-  width: 18px;
+  width: 17px;
+
   height: 2px;
 
   display: block;
@@ -230,25 +278,23 @@
   background: #334155;
 
   border-radius: 999px;
-
-  transition:
-    transform 0.25s ease,
-    opacity 0.2s ease;
 }
 
 
-/* Hamburger → X */
+/* =========================================================
+   OPEN STATE
+   IMPORTANT:
+   OUTSIDE HAMBURGER COMPLETELY HIDE
+========================================================= */
 
-.mobile-menu-button.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.mobile-menu-button.open span:nth-child(2) {
+.mobile-menu-button.open {
   opacity: 0;
-}
 
-.mobile-menu-button.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform: scale(0.9);
 }
 
 
@@ -267,9 +313,9 @@
 
 @media (max-width: 700px) {
 
-  /* -------------------------------------------------------
+  /* =======================================================
      NAVBAR
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .nav-container {
     height: 68px;
@@ -277,28 +323,31 @@
     padding: 0 18px;
   }
 
+
   .brand {
     font-size: 19px;
   }
 
+
   .brand-icon {
     width: 37px;
+
     height: 37px;
   }
 
 
-  /* -------------------------------------------------------
-     DESKTOP NAV HIDE
-  ------------------------------------------------------- */
+  /* =======================================================
+     HIDE DESKTOP NAV
+  ======================================================= */
 
   .nav-links {
     display: none;
   }
 
 
-  /* -------------------------------------------------------
-     HAMBURGER SHOW
-  ------------------------------------------------------- */
+  /* =======================================================
+     SHOW HAMBURGER
+  ======================================================= */
 
   .mobile-menu-button {
     display: flex;
@@ -309,9 +358,9 @@
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      SIDEBAR WRAPPER
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .mobile-menu-wrapper {
     position: fixed;
@@ -319,6 +368,7 @@
     inset: 0;
 
     width: 100%;
+
     height: 100vh;
 
     display: block;
@@ -331,9 +381,9 @@
   }
 
 
-  /* -------------------------------------------------------
-     OVERLAY
-  ------------------------------------------------------- */
+  /* =======================================================
+     DARK OVERLAY
+  ======================================================= */
 
   .mobile-menu-overlay {
     position: absolute;
@@ -343,6 +393,7 @@
     background: rgba(15, 23, 42, 0.42);
 
     backdrop-filter: blur(3px);
+
     -webkit-backdrop-filter: blur(3px);
 
     opacity: 0;
@@ -351,14 +402,15 @@
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      SIDEBAR
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .mobile-nav {
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 290px;
@@ -388,12 +440,14 @@
       transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
     overflow-y: auto;
+
+    box-sizing: border-box;
   }
 
 
-  /* -------------------------------------------------------
-     OPEN SIDEBAR
-  ------------------------------------------------------- */
+  /* =======================================================
+     SIDEBAR OPEN
+  ======================================================= */
 
   .mobile-menu-wrapper.show {
     visibility: visible;
@@ -401,18 +455,22 @@
     pointer-events: auto;
   }
 
-  .mobile-menu-wrapper.show .mobile-menu-overlay {
+
+  .mobile-menu-wrapper.show
+  .mobile-menu-overlay {
     opacity: 1;
   }
 
-  .mobile-menu-wrapper.show .mobile-nav {
+
+  .mobile-menu-wrapper.show
+  .mobile-nav {
     transform: translateX(0);
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      SIDEBAR HEADER
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .mobile-sidebar-header {
     min-height: 54px;
@@ -431,7 +489,9 @@
   }
 
 
-  /* Sidebar brand */
+  /* =======================================================
+     SIDEBAR BRAND
+  ======================================================= */
 
   .mobile-sidebar-brand {
     display: flex;
@@ -450,10 +510,13 @@
   }
 
 
-  /* Sidebar icon */
+  /* =======================================================
+     SIDEBAR ICON
+  ======================================================= */
 
   .mobile-sidebar-icon {
     width: 38px;
+
     height: 38px;
 
     display: grid;
@@ -469,20 +532,23 @@
     border-radius: 10px;
   }
 
+
   .mobile-sidebar-icon svg {
     width: 22px;
+
     height: 22px;
   }
 
 
-  /* -------------------------------------------------------
-     CLOSE BUTTON
-  ------------------------------------------------------- */
+  /* =======================================================
+     SIDEBAR CLOSE BUTTON
+  ======================================================= */
 
   .mobile-sidebar-close {
     position: relative;
 
     width: 40px;
+
     height: 40px;
 
     display: flex;
@@ -495,7 +561,8 @@
 
     background: #f8fafc;
 
-    border: 1px solid #e2e8f0;
+    /* No visible heavy border */
+    border: 1px solid transparent;
 
     border-radius: 10px;
 
@@ -504,40 +571,78 @@
     transition:
       background 0.2s ease,
       border-color 0.2s ease,
+      box-shadow 0.2s ease,
       transform 0.2s ease;
   }
+
+
+  /* Close button hover */
 
   .mobile-sidebar-close:hover {
     background: #eff6ff;
 
-    border-color: #bfdbfe;
+    border-color: #dbeafe;
 
-    transform: rotate(3deg);
+    /* Professional 4px outer ring */
+
+    box-shadow:
+      0 0 0 4px rgba(37, 99, 235, 0.10);
+
+    transform: scale(1.03);
   }
+
+
+  /* Close button focus */
+
+  .mobile-sidebar-close:focus-visible {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+      0 0 0 4px rgba(37, 99, 235, 0.12);
+  }
+
+
+  /* =======================================================
+     CLOSE ICON
+  ======================================================= */
 
   .mobile-sidebar-close span {
     position: absolute;
 
     width: 17px;
+
     height: 2px;
 
     background: #334155;
 
     border-radius: 999px;
+
+    transition: background 0.2s ease;
   }
+
 
   .mobile-sidebar-close span:first-child {
     transform: rotate(45deg);
   }
+
 
   .mobile-sidebar-close span:last-child {
     transform: rotate(-45deg);
   }
 
 
-  /* -------------------------------------------------------
-     NAV LINKS
-  ------------------------------------------------------- */
+  /* Close icon hover */
+
+  .mobile-sidebar-close:hover span {
+    background: #2563eb;
+  }
+
+
+  /* =======================================================
+     MOBILE NAV LINKS WRAPPER
+  ======================================================= */
 
   .mobile-nav-links {
     display: flex;
@@ -547,6 +652,10 @@
     gap: 7px;
   }
 
+
+  /* =======================================================
+     MOBILE LINKS
+  ======================================================= */
 
   .mobile-nav a {
     min-height: 53px;
@@ -581,6 +690,8 @@
   }
 
 
+  /* Link hover */
+
   .mobile-nav a:hover {
     color: #2563eb;
 
@@ -592,9 +703,9 @@
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      ARROWS
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .mobile-nav-arrow {
     color: #94a3b8;
@@ -606,16 +717,18 @@
       transform 0.2s ease;
   }
 
-  .mobile-nav a:hover .mobile-nav-arrow {
+
+  .mobile-nav a:hover
+  .mobile-nav-arrow {
     color: #2563eb;
 
     transform: translateX(4px);
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      ORDERS
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .mobile-orders-link {
     margin-top: 7px;
@@ -627,6 +740,7 @@
     border: 1px solid #dbeafe !important;
   }
 
+
   .mobile-orders-link:hover {
     color: #2563eb !important;
 
@@ -634,6 +748,7 @@
 
     transform: translateX(3px);
   }
+
 
   .mobile-orders-link.active {
     color: #ffffff !important;
@@ -646,14 +761,16 @@
       0 7px 18px rgba(37, 99, 235, 0.22);
   }
 
-  .mobile-orders-link.active .mobile-nav-arrow {
+
+  .mobile-orders-link.active
+  .mobile-nav-arrow {
     color: #ffffff;
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      SIDEBAR FOOTER
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .mobile-sidebar-footer {
     margin-top: auto;
@@ -676,8 +793,11 @@
   }
 
 
+  /* Green security indicator */
+
   .security-dot {
     width: 8px;
+
     height: 8px;
 
     border-radius: 50%;
@@ -685,7 +805,7 @@
     background: #22c55e;
 
     box-shadow:
-      0 0 0 4px rgba(34, 197, 94, 0.1);
+      0 0 0 4px rgba(34, 197, 94, 0.10);
   }
 }
 
@@ -700,23 +820,57 @@
     padding: 0 14px;
   }
 
+
   .brand {
     font-size: 18px;
   }
 
+
   .brand-icon {
     width: 35px;
+
     height: 35px;
   }
 
+
   .mobile-menu-button {
     width: 40px;
+
     height: 40px;
   }
+
 
   .mobile-nav {
     width: 275px;
 
+    max-width: 86vw;
+
     padding: 18px 14px;
+  }
+
+
+  .mobile-sidebar-header {
+    padding-bottom: 14px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .mobile-sidebar-brand {
+    font-size: 19px;
+  }
+
+
+  .mobile-sidebar-icon {
+    width: 36px;
+
+    height: 36px;
+  }
+
+
+  .mobile-sidebar-close {
+    width: 38px;
+
+    height: 38px;
   }
 }
